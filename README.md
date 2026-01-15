@@ -50,25 +50,25 @@ In this phase, a meeting with the server team introduces the draft Vulnerability
 
 #### Policy Buy-In Discussion
 
-**Josh**: Good morning, Jimmy! How’s everything been? I know it’s been a busy few weeks.  
+**Josh**: Good morning, Hasan! How’s everything been? I know it’s been a busy few weeks.  
 
-**Jimmy**: Morning, Josh. Yeah, it’s been hectic, but we’re hanging in there. Thanks for asking. I had a chance to review the policy draft, and it makes sense overall. However, with our current staffing, we can’t meet the aggressive remediation timelines—especially the 48-hour window for critical vulnerabilities.  
+**Hasan**: Morning, Josh. Yeah, it’s been hectic, but we’re hanging in there. Thanks for asking. I had a chance to review the policy draft, and it makes sense overall. However, with our current staffing, we can’t meet the aggressive remediation timelines—especially the 48-hour window for critical vulnerabilities.  
 
 **Josh**: Totally understand. The timelines are a bit aggressive to start. How about we extend the critical vulnerability resolution to one week for now? We can reserve the 48-hour window for truly severe zero-day vulnerabilities.  
 
-**Jimmy**: That sounds reasonable. We’d appreciate that flexibility. Can we also get a bit of leeway at the beginning as we adjust to the new remediation and patching process? Maybe just for the first few months?  
+**Hasan**: That sounds reasonable. We’d appreciate that flexibility. Can we also get a bit of leeway at the beginning as we adjust to the new remediation and patching process? Maybe just for the first few months?  
 
 **Josh**: Absolutely. Once the policy is finalized, we’ll officially start the program, but every department will get about six months to adjust and get comfortable with the new process. Does that sound fair?  
 
-**Jimmy**: Thanks, Josh. That sounds great. We’ll do our best. I appreciate you involving us in the decision-making process—it really makes us feel like part of the solution.  
+**Hasan**: Thanks, Josh. That sounds great. We’ll do our best. I appreciate you involving us in the decision-making process—it really makes us feel like part of the solution.  
 
 **Josh**: Of course. We’re all in this together. Thanks for working with us on this.  
 
-**Jimmy**: No problem. Thanks for the quick meeting.  
+**Hasan**: No problem. Thanks for the quick meeting.  
 
 **Josh**: My favorite kind of meeting! Bye now.  
 
-**Jimmy**: See you later.
+**Hasan**: See you later.
 
 ---
 
@@ -84,33 +84,33 @@ The team collaborates with the server team to initiate scheduled credential scan
 
 #### Vulnerability Management Discussion
 
-**Josh**: Good morning, Jimmy!  
+**Josh**: Good morning, Hasan!  
 
-**Jimmy**: Good morning! I heard you're ready to conduct some scans.  
+**Hasan**: Good morning! I heard you're ready to conduct some scans.  
 
 **Josh**: Yep, now that our vulnerability management policy is in place, I wanted to get started on conducting some scheduled credentialed scans of your environment.  
 
-**Jimmy**: Sounds good to me. What’s involved, and how can we help?  
+**Hasan**: Sounds good to me. What’s involved, and how can we help?  
 
 **Josh**: We're planning to schedule weekly scans of the server infrastructure. We estimate it’ll take about 4 to 6 hours to scan all 200 assets. We’ll need you to provide administrative credentials so the scan engine can remotely log into the servers and assess them.  
 
-**Jimmy**: Whoa, hold on. What exactly does scanning entail? I’m a bit concerned about resource usage, also you want admin credentials for all 200 machines? That doesn’t sound safe.  
+**Hasan**: Whoa, hold on. What exactly does scanning entail? I’m a bit concerned about resource usage, also you want admin credentials for all 200 machines? That doesn’t sound safe.  
 
 **Josh**: Those are valid concerns. The scan engine sends different traffic to the servers to check for vulnerabilities. This includes looking at the registry, checking for outdated software, and identifying insecure protocols or suites. That’s why credentials are needed.  
 
-**Jimmy**: I see. As long as it doesn’t take the servers offline, I think we’ll be okay.  
+**Hasan**: I see. As long as it doesn’t take the servers offline, I think we’ll be okay.  
 
 **Josh**: Absolutely. Let’s start by scanning just one server and monitor the resource utilization.  
 
-**Jimmy**: That sounds like a good idea.  
+**Hasan**: That sounds like a good idea.  
 
 **Josh**: Great. Also, for the credentials, could you set something up in Active Directory? You can leave the credentials disabled until we’re ready to scan, then enable them during the scan. Afterward, we can de-provision or disable the account. A kind of “just-in-time” access approach.  
 
-**Jimmy**: That sounds good. I’ll have Susan start working on the automation for account provisioning.  
+**Hasan**: That sounds good. I’ll have Susan start working on the automation for account provisioning.  
 
 **Josh**: Awesome. Talk soon!  
 
-**Jimmy**: Sounds good. I’ll get back to you once the credentials are set up. See you later!  
+**Hasan**: Sounds good. I’ll get back to you once the credentials are set up. See you later!  
 
 **Josh**: See you later!  
 
@@ -151,16 +151,16 @@ The server team reviewed vulnerability scan results, identifying outdated softwa
 
 #### Vulnerability Management Discussion
 
-**Josh**: Morning, Jimmy! How are you doing?  
+**Josh**: Morning, Hasan! How are you doing?  
 
-**Jimmy**: Not bad for a Monday. How about you?  
+**Hasan**: Not bad for a Monday. How about you?  
 
 **Josh**: I’m still alive, so I can’t complain. Before we dive into the vulnerabilities, how did the scan go on your end? Any outages or resource overutilization?  
 
-**Jimmy**: The scan went well. We monitored it closely, and aside from all the open connections, we wouldn’t have even noticed a scan was happening.  
+**Hasan**: The scan went well. We monitored it closely, and aside from all the open connections, we wouldn’t have even noticed a scan was happening.  
 
 **Josh**: That’s good to hear. I didn’t expect any major issues, but we’ll keep monitoring going forward to ensure resource utilization stays in check. Do you mind if we dive into the findings?  
-**Jimmy**: Absolutely.  
+**Hasan**: Absolutely.  
 
 **Josh**: Great. Let me share my screen. Most of the vulnerabilities seem to come from outdated software, particularly Wireshark. You can see it’s installed on multiple servers, and the software is out of date.  
 
@@ -173,23 +173,23 @@ In summary, the main issues to remediate are:
 - **Deprecated cipher suites and protocols**.  
 - **Removing the local guest account from the administrators group**.  
 
-**Jimmy**: Interesting. The good news is most of our servers likely share these vulnerabilities, so remediation should be straightforward.  
+**Hasan**: Interesting. The good news is most of our servers likely share these vulnerabilities, so remediation should be straightforward.  
 
 **Josh**: Exactly—a uniform issue makes things easier. Do you foresee any challenges with remediating the cipher suites and protocols?  
 
-**Jimmy**: I doubt it’ll be a problem. We’ll run these changes through the next Change Control Board. As for Wireshark and the guest account, those shouldn’t be an issue either since they shouldn’t be on the servers in the first place. I’ll check with our CIS admins about that.  
+**Hasan**: I doubt it’ll be a problem. We’ll run these changes through the next Change Control Board. As for Wireshark and the guest account, those shouldn’t be an issue either since they shouldn’t be on the servers in the first place. I’ll check with our CIS admins about that.  
 
 **Josh**: Great. I’ll start building remediation packages to simplify the process for you.  
 
-**Jimmy**: Sounds good.  
+**Hasan**: Sounds good.  
 
 **Josh**: By the way, do you already have a patch management system in place for handling the Windows Update-related vulnerabilities?  
 
-**Jimmy**: Yes, no worries there. Windows Updates are handled automatically, and everything should be patched by next week.  
+**Hasan**: Yes, no worries there. Windows Updates are handled automatically, and everything should be patched by next week.  
 
 **Josh**: Excellent. I’ll get started on researching the best ways to address the findings and have something ready for the next Change Control Board.  
 
-**Jimmy**: Sounds good. Talk to you soon.  
+**Hasan**: Sounds good. Talk to you soon.  
 
 **Josh**: Cool, talk to you soon!  
 
@@ -202,9 +202,9 @@ The Change Control Board (CAB) reviewed and approved the plan to remove insecure
 
 #### CAB Vulnerability Remediation Discussion
 
-**Johnny**: Next up on the list are a couple of vulnerability remediations for the server team. First, the removal of insecure protocols, and second, the removal of insecure cipher suites. It looks like Josh from the Risk department is working in conjunction with Jimmy from Infrastructure on this. Jimmy, do you want to walk us through the technical aspects of the change being implemented?  
+**Johnny**: Next up on the list are a couple of vulnerability remediations for the server team. First, the removal of insecure protocols, and second, the removal of insecure cipher suites. It looks like Josh from the Risk department is working in conjunction with Hasan from Infrastructure on this. Hasan, do you want to walk us through the technical aspects of the change being implemented?  
 
-**Jimmy**: Normally, I would, but do you mind giving this one to Josh? He actually built the solution for us. We’re still getting used to the process.  
+**Hasan**: Normally, I would, but do you mind giving this one to Josh? He actually built the solution for us. We’re still getting used to the process.  
 
 **Josh**: Sure, I can explain. Insecure cipher suites and protocols mean that the system is capable of negotiating and using outdated algorithms or protocols that have been deprecated. For example, if a server only supports these insecure protocols, a system could connect using them, which poses a security risk.  
 
