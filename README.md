@@ -1,4 +1,4 @@
-# Vulnerability Management Program Implementation
+# Vulnerability Management Program
 
 In this project, we simulate the implementation of a comprehensive vulnerability management program, from inception to completion.
 
